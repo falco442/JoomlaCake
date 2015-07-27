@@ -34,6 +34,6 @@ You can program as you want, like it was a simple CakePHP application, with all 
 ## Notes
 
 * The version of CakePHP I used is the 2.6.7
-* This application allows all logged in users to do anything. Be careful
+* This application allows all logged in users to do anything. Be careful.
 
 
