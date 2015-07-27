@@ -18,9 +18,15 @@ The user table is the Joomla's one, so it takes the `$useTable` and `$tablePrefi
 
 If you want to change the global database configuration, you can edit `app/Config/database.php` and add another configuration, using the variable `$useDbConfig` in your models.
 
+## How it works
+
 # Login
 
 The login is already provided, as the user->index function. You can execute your login either from your Joomla site (and after visite `http://your-joomla-site/your-cake-dir`) or from your CakePHP application. Both method work.
+
+# Programming
+
+You can program as you want, like it was a simple CakePHP application, with all MVC you want.
 
 
 # Notes
