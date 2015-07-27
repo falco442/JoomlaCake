@@ -18,6 +18,8 @@ The user table is the Joomla's one, so it takes the `$useTable` and `$tablePrefi
 
 If you want to change the global database configuration, you can edit `app/Config/database.php` and add another configuration, using the variable `$useDbConfig` in your models.
 
+**Don't forget to change the `Security.salt` and `Security.cipherSeed` values in `app/Config/core.php`!!**
+
 # How it works
 
 ## Login
