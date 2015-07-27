@@ -68,16 +68,16 @@
  */
 class DATABASE_CONFIG {
 
-// 	public $default = array(
-// 		'datasource' => 'Database/Mysql',
-// 		'persistent' => false,
-// // 		'host' => $dbConfig->host,
-// // 		'login' => $dbConfig->db,
-// // 		'password' => $dbConfig->user,
-// // 		'database' => $dbConfig->password,
-// // 		'prefix' => $dbConfig->dbprefix,
-// 		//'encoding' => 'utf8',
-// 	);
+	public $default = array(
+		'datasource' => 'Database/Mysql',
+		'persistent' => false,
+		'host' => 'DB_HOST',
+		'login' => 'DB_USERNAME',
+		'password' => 'DB_PASSWORD',
+		'database' => 'DB_NAME',
+		'prefix' => 'DB_PREFIX',
+// 		'encoding' => 'utf8',
+	);
 
 	public $test = array(
 		'datasource' => 'Database/Mysql',
@@ -93,12 +93,12 @@ class DATABASE_CONFIG {
 	public function __construct()
 	{
 		$dbConfig = Configure::read('dbConfig');
-		$this->default['host'] = $dbConfig->host;
-		$this->default['database'] = $dbConfig->db;
-		$this->default['login'] = $dbConfig->user;
-		$this->default['password'] = $dbConfig->password;
-		$this->default['prefix'] = $dbConfig->dbprefix;
-		$this->default['datasource'] = 'Database/Mysql';
-		$this->default['persistent'] = false;
+		$this->joomla['host'] = $dbConfig->host;
+		$this->joomla['database'] = $dbConfig->db;
+		$this->joomla['login'] = $dbConfig->user;
+		$this->joomla['password'] = $dbConfig->password;
+		$this->joomla['prefix'] = $dbConfig->dbprefix;
+		$this->joomla['datasource'] = 'Database/Mysql';
+		$this->joomla['persistent'] = false;
 	}
 }

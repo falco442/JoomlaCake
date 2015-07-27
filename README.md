@@ -14,9 +14,11 @@
 
 The application is ready to interact with the Joomla database, inheriting all necessary (database, table prefix, db username and db password).
 
-The user table is the Joomla's one, so it takes the `$useTable` and `$tablePrefix` variables once again.
+The database configuration for User model is already provided, reading automatically the `configuration.php` in the root folder of your Joomla installation.
 
-If you want to change the global database configuration, you can edit `app/Config/database.php` and add another configuration, using the variable `$useDbConfig` in your models.
+The user table is the Joomla's one, so the User model use the `$joomla` configuration in `app/Config/database.php`.
+
+If you want to add the default database configuration, you can edit `app/Config/database.php` and add another configuration.
 
 **Don't forget to change the `Security.salt` and `Security.cipherSeed` values in `app/Config/core.php`!!**
 
@@ -24,7 +26,7 @@ If you want to change the global database configuration, you can edit `app/Confi
 
 ## Login
 
-The login is already provided, as the user->index function. You can execute your login either from your Joomla site (and after visite `http://your-joomla-site/your-cake-dir`) or from your CakePHP application. Both method work.
+The login function (and view) is already provided, as the user->index function. You can execute your login either from your Joomla site (and after visite `http://your-joomla-site/your-cake-dir`) or from your CakePHP application. Both method work.
 
 ## Programming
 
