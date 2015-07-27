@@ -1,3 +1,8 @@
+# Versions
+
+* CakePHP version: 2.6.7
+* Joomla version: 2.5.28
+
 # Install
 
 ## Manual install
