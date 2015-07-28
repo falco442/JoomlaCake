@@ -8,7 +8,7 @@
 #/build
 #/dist
 #/tags
-core.php
+app/Config/core.php
 *.mo
 
 # IDE and editor specific files #
