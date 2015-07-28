@@ -11,6 +11,9 @@
 		<?= $this->Html->link(__('Joomla site'),FULL_BASE_URL,array('class'=>'navbar-brand')); ?>
 	</div>
 	<div id="navbar" class="navbar-collapse collapse">
+		<ul class="nav navbar-nav">
+			<li><?= $this->Html->link(__('Users'),array('controller'=>'users','action'=>'index')); ?></li>
+		</ul>
 		<?php
 			if($loggedIn==false)
 			{
@@ -26,7 +29,7 @@
 				));
 				echo $this->Form->input('username',array('placeholder'=>'username'));
 				echo $this->Form->input('password',array('placeholder'=>'password'));
-				echo $this->Form->input('remember',array('div'=>'user-remember inline-form','type'=>'checkbox','label'=>__('Remember me')));
+				echo $this->Form->input('remember',array('div'=>'user-remember form-group','type'=>'checkbox','label'=>__('Remember me')));
 				echo $this->Form->submit(__('Sign in'),array('class'=>'btn btn-success','div'=>false));
 				echo $this->Form->end();
 			}

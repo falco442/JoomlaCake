@@ -47,6 +47,8 @@ class AppController extends Controller {
 			'loginRedirect'=>array('controller'=>'pages','action'=>'display','home'),
 			'logoutRedirect'=>array('controller'=>'pages','action'=>'display','home'),
 			'loginAction'=>'/',
+			'authError' => 'You\'re not authorize to access that location',
+			'unauthorizedRedirect'=>false,
 			'flash'=>array(
 				'element'=>'alert',
 				'key'=>'auth',
