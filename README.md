@@ -24,13 +24,13 @@ Also allows to perform login either from Joomla, or from CakePHP itself, with th
 * Go to your Joomla root directory
 * use the command 
 
-    ```php
+    ```bash
     git clone https://github.com/falco442/JoomlaCake.git
     ```
     
     to clone into the subdirectory of Joomla `JoomlaCake` (default) or
     
-    ```php
+    ```bash
     git clone https://github.com/falco442/JoomlaCake.git your-dir
     ```
     to clone into `your-dir` as a subdirectory of Joomla root dir
