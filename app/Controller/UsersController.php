@@ -20,10 +20,8 @@
 					'remember'=>false,
 					'action'=>''
 				);
-				if(isset($this->request->data['User']['remember']))
-					$options = array(
-						'remember'=>$this->request->data['User']['remember']
-					);
+				if($this->request->data['User']['remember']!=0)
+					$options['remember'] = true;
 				if($jApplication->login($credentials,$options))
 				{
 					$this->Auth->login($this->request->data['username']);
