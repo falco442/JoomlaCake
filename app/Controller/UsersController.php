@@ -9,6 +9,7 @@
 		
 		public function login()
 		{
+			$this->autoRender = false;
 			if($this->request->is('post'))
 			{
 				$jApplication = new JApplication();

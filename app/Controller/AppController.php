@@ -46,6 +46,7 @@ class AppController extends Controller {
 			'authenticate'=>'Form',
 			'loginRedirect'=>array('controller'=>'pages','action'=>'display','home'),
 			'logoutRedirect'=>array('controller'=>'pages','action'=>'display','home'),
+			'loginAction'=>'/',
 			'flash'=>array(
 				'element'=>'alert',
 				'key'=>'auth',
@@ -65,7 +66,10 @@ class AppController extends Controller {
 		{
 			$this->Auth->allow();
 			$this->Session->write('Auth.User',(array)$user);
+			$this->set('loggedIn',true);
 		}
+		else
+			$this->set('loggedIn',false);
 		$this->theme = 'Bootstrap';
 		$this->layout = 'default';
 	}

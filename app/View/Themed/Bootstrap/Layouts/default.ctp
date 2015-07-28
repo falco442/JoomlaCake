@@ -16,7 +16,8 @@
 		<?php
 			echo $this->Html->css(array(
 				'bootstrap.min',
-				'jumbotron'
+				'jumbotron',
+				'inline-form'
 			));
 		?>
 

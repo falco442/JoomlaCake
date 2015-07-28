@@ -8,18 +8,34 @@
 		<span class="icon-bar"></span>
 		<span class="icon-bar"></span>
 		</button>
-		<a class="navbar-brand" href="#">Project name</a>
+		<?= $this->Html->link(__('Joomla site'),FULL_BASE_URL,array('class'=>'navbar-brand')); ?>
 	</div>
 	<div id="navbar" class="navbar-collapse collapse">
-		<form class="navbar-form navbar-right">
-		<div class="form-group">
-			<input type="text" placeholder="Email" class="form-control">
-		</div>
-		<div class="form-group">
-			<input type="password" placeholder="Password" class="form-control">
-		</div>
-		<button type="submit" class="btn btn-success">Sign in</button>
-		</form>
+		<?php
+			if($loggedIn==false)
+			{
+				echo $this->Form->create('User',array(
+					'class'=>'navbar-form navbar-right',
+					'url'=>array('controller'=>'users','action'=>'login'),
+					'inputDefaults'=>array(
+						'class'=>'form-control',
+						'div'=>'form-group inline-form',
+						'label'=>false,
+						'wrapInput'=>false
+					)
+				));
+				echo $this->Form->input('username',array('placeholder'=>'username'));
+				echo $this->Form->input('password',array('placeholder'=>'password'));
+				echo $this->Form->input('remember',array('div'=>'user-remember inline-form','type'=>'checkbox','label'=>__('Remember me')));
+				echo $this->Form->submit(__('Sign in'),array('class'=>'btn btn-success','div'=>false));
+				echo $this->Form->end();
+			}
+			else
+			{
+				$signOutButton = $this->Html->link(__('Sign out'),array('controller'=>'users','action'=>'logout'),array('class'=>'navbar-right btn btn-success'));
+				echo $this->Html->div('navbar-form navbar-right form-group',$signOutButton,array('escape'=>false));
+			}
+		?>
 	</div><!--/.navbar-collapse -->
 	</div>
 </nav>
