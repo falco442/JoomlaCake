@@ -1,4 +1,13 @@
-# Versions
+# Introduction
+
+This application is a modified version of CakePHP 2.6.7. It allows to use CakePHP as an application inside Joomla, in a subdirectory of Joomla root folder. 
+
+It takes the same users of Joomla users database table, and (by default) allows only to logged in users in Joomla to do anything.
+
+Also allows to perform login either from Joomla, or from CakePHP itself, with the option “Remember me”.
+
+
+# Version notes
 
 * CakePHP version: 2.6.7
 * Joomla version: 2.5.28
@@ -9,6 +18,11 @@
 
 * Download the package
 * Extract the package into an arbitrary subdirectory of your Joomla rootdir, example `joomla-root-dir/cake`
+
+## Using Git
+
+* Go to your Joomla root directory
+* use the command `git clone https://github.com/falco442/JoomlaCake.git`
 
 ## Setup
 
