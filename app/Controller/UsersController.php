@@ -29,8 +29,17 @@
 					$this->Auth->login($this->request->data['username']);
 					return $this->redirect($this->Auth->redirect());
 				}
-				$this->Session->setFlash(__('Username or password wrong'));
+				return $this->Session->setFlash(__('Username or password wrong'));
 			}
+		}
+		
+		public function logout()
+		{
+			$userId = $this->Session->read('Auth.User.id');
+			$jApplication = new JApplication();
+			$jApplication->logout($userId);
+			$this->Session->delete('Auth.User');
+			return $this->redirect($this->Auth->logoutRedirect);
 		}
 	
 		public function beforeFilter()

@@ -32,9 +32,10 @@ App::uses('Controller', 'Controller');
  */
 class AppController extends Controller {
 	public $helpers = array(
-		'Paginator',
-		'Html',
-		'Session'
+		'Session',
+		'Html' => array('className' => 'BoostCake.BoostCakeHtml'),
+		'Form' => array('className' => 'BoostCake.BoostCakeForm'),
+		'Paginator' => array('className' => 'BoostCake.BoostCakePaginator'),
 	);
 
 	public $components = array(
@@ -44,7 +45,15 @@ class AppController extends Controller {
 			'authorize'=>'Controller',
 			'authenticate'=>'Form',
 			'loginRedirect'=>array('controller'=>'pages','action'=>'display','home'),
-			'logoutRedirect'=>array('controller'=>'pages','action'=>'display','home')
+			'logoutRedirect'=>array('controller'=>'pages','action'=>'display','home'),
+			'flash'=>array(
+				'element'=>'alert',
+				'key'=>'auth',
+				'params'=>array(
+					'plugin'=>'BoostCake',
+					'class'=>'alert-danger'
+				)
+			)
 		)
 	);
 	
@@ -53,6 +62,11 @@ class AppController extends Controller {
 		$user = JFactory::getUser();
 		$this->set(compact('user'));
 		if(!empty($user->username))
+		{
 			$this->Auth->allow();
+			$this->Session->write('Auth.User',(array)$user);
+		}
+		$this->theme = 'Bootstrap';
+		$this->layout = 'default';
 	}
 }
