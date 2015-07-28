@@ -1,6 +1,11 @@
 # Introduction
 
-This application is a modified version of CakePHP 2.6.7. It allows to use CakePHP as an application inside Joomla, in a subdirectory of Joomla root folder. 
+This application is a modified version of the [master branch](https://github.com/falco442/JoomlaCake/tree/master) of JoomlaCake application. 
+
+I included some new features:
+* A “ready to use” Bootstrap layout
+* A login form inline in the navbar
+* a logout action so users can perform logout from the Joomla site even from the CakePHP application.
 
 It takes the same users of Joomla users database table, and (by default) allows only to logged in users in Joomla to do anything.
 
